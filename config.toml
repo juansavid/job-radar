@@ -1,0 +1,145 @@
+# Qué busca job-radar. Podés editar este archivo sin tocar el código.
+
+min_score = 30
+max_age_days = 60
+sheet_tab = "Ofertas"
+summary_tab = "Resumen"
+
+# Búsquedas en portales con buscador.
+search_terms = [
+  "ad operations",
+  "programmatic",
+  "monetization",
+  "yield manager",
+  "technical account manager",
+  "publisher success",
+  "partner success",
+  "campaign operations",
+  "growth operations",
+  "retail media",
+  "business operations",
+  "partnerships operations",
+]
+
+# Páginas de empleo. tag = "adtech" da contexto publicitario a todas sus ofertas.
+companies = [
+  { name = "PubMatic", ats = "greenhouse", slug = "pubmatic", tag = "adtech" },
+  { name = "Taboola", ats = "greenhouse", slug = "taboola", tag = "adtech" },
+  { name = "Sovrn", ats = "greenhouse", slug = "sovrn", tag = "adtech" },
+  { name = "Freestar", ats = "greenhouse", slug = "freestar", tag = "adtech" },
+  { name = "GumGum", ats = "greenhouse", slug = "gumgum", tag = "adtech" },
+  { name = "TripleLift", ats = "greenhouse", slug = "triplelift", tag = "adtech" },
+  { name = "Liftoff", ats = "greenhouse", slug = "liftoff", tag = "adtech" },
+  { name = "AppsFlyer", ats = "greenhouse", slug = "appsflyer", tag = "adtech" },
+  { name = "Moloco", ats = "greenhouse", slug = "moloco", tag = "adtech" },
+  { name = "AppLovin", ats = "greenhouse", slug = "applovin", tag = "adtech" },
+  { name = "InMobi", ats = "greenhouse", slug = "inmobi", tag = "adtech" },
+  { name = "Kargo", ats = "greenhouse", slug = "kargo", tag = "adtech" },
+  { name = "Jampp", ats = "greenhouse", slug = "jampp", tag = "adtech" },
+  { name = "OpenX", ats = "lever", slug = "openx", tag = "adtech" },
+  { name = "Raptive", ats = "ashby", slug = "raptive", tag = "adtech" },
+  { name = "Permutive", ats = "ashby", slug = "permutive", tag = "adtech" },
+  { name = "Aditude", ats = "ashby", slug = "aditude", tag = "adtech" },
+  { name = "Vox Media", ats = "greenhouse", slug = "voxmedia", tag = "digital" },
+  { name = "Tripadvisor", ats = "greenhouse", slug = "tripadvisor", tag = "digital" },
+  { name = "Duolingo", ats = "greenhouse", slug = "duolingo", tag = "digital" },
+  { name = "Reddit", ats = "greenhouse", slug = "reddit", tag = "digital" },
+  { name = "Pinterest", ats = "greenhouse", slug = "pinterest", tag = "digital" },
+  { name = "Instacart", ats = "greenhouse", slug = "instacart", tag = "digital" },
+  { name = "DoorDash", ats = "greenhouse", slug = "doordashusa", tag = "digital" },
+  { name = "Wolt", ats = "greenhouse", slug = "wolt", tag = "digital" },
+  { name = "Nubank", ats = "ashby", slug = "nubank", tag = "digital" },
+  { name = "Spotify", ats = "lever", slug = "spotify", tag = "digital" },
+]
+
+# Títulos que nunca querés ver.
+exclude_titles = [
+  "sales", "account executive", "sdr", "bdr", "business development",
+  "revenue operations", "revops", "intern", "internship", "trainee", "junior",
+  "engineer", "engineering", "developer", "product manager", "data scientist",
+  "recruiter", "werkstudent",
+]
+
+# Avisos de que un puesto puede tener objetivos comerciales.
+sales_alerts = ["quota", "upsell", "up-sell", "renewals", "new business", "commission"]
+
+# Avisos de que el puesto no sería totalmente remoto.
+onsite_alerts = ["hybrid", "híbrido", "on-site", "onsite", "presencial", "in office", "in-office"]
+
+adtech_terms = [
+  "ad tech", "adtech", "programmatic", "publisher", "publishers", "advertisers",
+  "advertising", "ssp", "dsp", "google ad manager", "ad network",
+]
+betting_terms = ["sports betting", "sportsbook", "igaming", "i-gaming", "casino", "betting", "affiliate"]
+
+# El primer círculo que coincide es el que se asigna.
+[[circles]]
+name = "Núcleo: Monetización y Ad Ops"
+base = 50
+titles = [
+  "ad operations", "adops", "ad ops", "programmatic", "yield", "monetization",
+  "trafficking", "ad trafficker", "publisher operations",
+]
+
+[[circles]]
+name = "1. Ad tech: clientes y técnico"
+base = 45
+requires = "adtech"
+titles = [
+  "technical account manager", "solutions consultant", "implementation manager",
+  "implementation specialist", "onboarding manager", "publisher success",
+  "partner success", "customer success",
+]
+
+[[circles]]
+name = "3. Apuestas e iGaming"
+base = 40
+requires = "betting"
+titles = [
+  "affiliate operations", "affiliate manager", "partner operations",
+  "commercial operations", "operations manager",
+]
+
+[[circles]]
+name = "2. Publicidad fuera de medios"
+base = 40
+titles = [
+  "campaign operations", "campaign manager", "retail media", "commerce media",
+  "growth operations", "performance marketing operations",
+]
+
+[[circles]]
+name = "2. Publicidad fuera de medios"
+base = 30
+titles = ["marketing operations"]
+exclude_text = ["hubspot", "marketo", "lead scoring", "lead management", "salesforce", "demand generation"]
+
+[[circles]]
+name = "4. Operaciones generales"
+base = 25
+titles = [
+  "business operations", "bizops", "strategy & operations", "strategy and operations",
+  "commercial operations", "partnerships operations", "partner operations",
+  "vendor manager", "vendor management",
+]
+
+# Puntos extra si el aviso menciona estas habilidades (máximo 30 en total).
+[skills]
+"google ad manager" = 15
+"ad manager" = 8
+"ad exchange" = 5
+"adx" = 5
+"open bidding" = 5
+"header bidding" = 5
+"prebid" = 5
+"programmatic" = 5
+"adjust" = 3
+"looker" = 3
+"spanish" = 5
+"latam" = 3
+
+[location_points]
+Argentina = 15
+LATAM = 10
+Global = 5
+Revisar = 0
